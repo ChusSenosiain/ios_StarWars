@@ -10,6 +10,7 @@
 
 #import "MJSCStarsWarsCharacter.h"
 #import "MJSCCharacterViewController.h"
+#import "MJSCWikiViewController.h"
 
 
 @implementation AppDelegate
@@ -23,7 +24,7 @@
     
     
     // Creo un modelo
-    NSURL *vaderURL = [NSURL URLWithString:@""];
+    NSURL *vaderURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Darth_Vader"];
     NSBundle *b = [NSBundle mainBundle];
     NSData *vaderSound = [NSData dataWithContentsOfURL:[b URLForResource:@"vader" withExtension:@"caf"]];
     UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
@@ -36,12 +37,18 @@
                                                                                  image:vaderImage];
     
     
-    // Creo un controlador
+    // Creo los controladores
     MJSCCharacterViewController *vaderVC = [[MJSCCharacterViewController alloc]
                                             initWithModel:vader];
+    MJSCWikiViewController *wikiVC = [[MJSCWikiViewController alloc] initWithModel:vader];
+    
+    
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[vaderVC, wikiVC];
+
     
     // Lo muestro en la pantalla
-    self.window.rootViewController = vaderVC;
+    self.window.rootViewController = tabVC;
     
     
     return YES;

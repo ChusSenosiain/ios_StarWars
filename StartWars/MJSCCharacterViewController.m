@@ -18,6 +18,7 @@
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
         _player = [CafPlayer cafPlayer];
+        self.title = model.alias;
 
     }
     
@@ -41,6 +42,9 @@
 - (void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    //Eliminamos comporramiento por defecto de IOS?
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // sincronizar modelo -> vista
     self.photoView.image = self.model.photo;
