@@ -34,6 +34,8 @@
 		BBAFC0ED1A86030D00C5745E /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0EB1A86030D00C5745E /* CafPlayer.m */; };
 		BBAFC0F11A86103600C5745E /* MJSCWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0EF1A86103600C5745E /* MJSCWikiViewController.m */; };
 		BBAFC0F21A86103600C5745E /* MJSCWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */; };
+		BBAFC0F51A863E6100C5745E /* MJSCStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */; };
+		BBAFC0F81A86445400C5745E /* MJSCStarsWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		BBAFC0EE1A86103600C5745E /* MJSCWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSCWikiViewController.h; sourceTree = "<group>"; };
 		BBAFC0EF1A86103600C5745E /* MJSCWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCWikiViewController.m; sourceTree = "<group>"; };
 		BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJSCWikiViewController.xib; sourceTree = "<group>"; };
+		BBAFC0F31A863E6100C5745E /* MJSCStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSCStarWarsUniverse.h; sourceTree = "<group>"; };
+		BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCStarWarsUniverse.m; sourceTree = "<group>"; };
+		BBAFC0F61A86445400C5745E /* MJSCStarsWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSCStarsWarsUniverseViewController.h; sourceTree = "<group>"; };
+		BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCStarsWarsUniverseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,10 @@
 				BBAFC0EE1A86103600C5745E /* MJSCWikiViewController.h */,
 				BBAFC0EF1A86103600C5745E /* MJSCWikiViewController.m */,
 				BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */,
+				BBAFC0F31A863E6100C5745E /* MJSCStarWarsUniverse.h */,
+				BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */,
+				BBAFC0F61A86445400C5745E /* MJSCStarsWarsUniverseViewController.h */,
+				BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */,
 			);
 			path = StartWars;
 			sourceTree = "<group>";
@@ -312,10 +322,12 @@
 			files = (
 				BBAFC0C41A8534DB00C5745E /* MJSCStarsWarsCharacter.m in Sources */,
 				BBAFC0C81A853E1E00C5745E /* MJSCCharacterViewController.m in Sources */,
+				BBAFC0F51A863E6100C5745E /* MJSCStarWarsUniverse.m in Sources */,
 				BBAFC0ED1A86030D00C5745E /* CafPlayer.m in Sources */,
 				BBAFC0A81A852D3900C5745E /* AppDelegate.m in Sources */,
 				BBAFC0A51A852D3900C5745E /* main.m in Sources */,
 				BBAFC0F11A86103600C5745E /* MJSCWikiViewController.m in Sources */,
+				BBAFC0F81A86445400C5745E /* MJSCStarsWarsUniverseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
