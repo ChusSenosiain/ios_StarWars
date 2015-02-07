@@ -19,6 +19,7 @@
 
 - (id) initWithModel:(MJSCStarsWarsCharacter*) model;
 - (IBAction)playSound:(id)sender;
+- (IBAction)displayWikipedia:(id)sender;
 
 
 @end

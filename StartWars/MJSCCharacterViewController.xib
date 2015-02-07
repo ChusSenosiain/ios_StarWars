@@ -29,7 +29,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ieo-pB-yFB"/>
-                        <barButtonItem title="Wikipedia" id="KVj-Iw-XXy"/>
+                        <barButtonItem title="Wikipedia" id="KVj-Iw-XXy">
+                            <connections>
+                                <action selector="displayWikipedia:" destination="-1" id="6Zi-sJ-ppa"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>

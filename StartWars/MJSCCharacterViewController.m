@@ -7,6 +7,7 @@
 //
 
 #import "MJSCCharacterViewController.h"
+#import "MJSCWikiViewController.h"
 #import "CafPlayer.h"
 
 
@@ -28,7 +29,17 @@
 
 -(IBAction)playSound:(id)sender {
     
-       [self.player playSoundData:self.model.soundData];
+    [self.player playSoundData:self.model.soundData];
+    
+}
+
+- (IBAction)displayWikipedia:(id)sender {
+    
+    // Createmos el wikiVC
+    MJSCWikiViewController *wikiVC = [[MJSCWikiViewController alloc] initWithModel:self.model];
+    
+    // Pusheamos
+    [self.navigationController pushViewController:wikiVC animated:YES];
     
 }
 

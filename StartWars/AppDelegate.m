@@ -43,12 +43,10 @@
     MJSCWikiViewController *wikiVC = [[MJSCWikiViewController alloc] initWithModel:vader];
     
     
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    tabVC.viewControllers = @[vaderVC, wikiVC];
-
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vaderVC];
     
     // Lo muestro en la pantalla
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     
     return YES;
