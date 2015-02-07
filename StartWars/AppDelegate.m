@@ -23,30 +23,12 @@
     [self.window makeKeyAndVisible];
     
     
-    // Creo un modelo
-    NSURL *vaderURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Darth_Vader"];
-    NSBundle *b = [NSBundle mainBundle];
-    NSData *vaderSound = [NSData dataWithContentsOfURL:[b URLForResource:@"vader" withExtension:@"caf"]];
-    UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
+    // Creo el combinador
     
-    
-    MJSCStarsWarsCharacter *vader = [MJSCStarsWarsCharacter starsWarsCharacterWithName:@"Anakin Skywalker"
-                                                                                 alias:@"Darth Vader"
-                                                                                   url:vaderURL
-                                                                                 sound:vaderSound
-                                                                                 image:vaderImage];
-    
-    
-    // Creo los controladores
-    MJSCCharacterViewController *vaderVC = [[MJSCCharacterViewController alloc]
-                                            initWithModel:vader];
-    MJSCWikiViewController *wikiVC = [[MJSCWikiViewController alloc] initWithModel:vader];
-    
-    
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vaderVC];
-    
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    [tabVC setViewControllers:[self arrayOfControllers]];
     // Lo muestro en la pantalla
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = tabVC;
     
     
     return YES;
@@ -73,5 +55,136 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - Utils
+-(NSArray*) arrayOfModels {
+    
+    
+    
+    // Vader
+    NSURL *vaderURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Darth_Vader"];
+    NSBundle *b = [NSBundle mainBundle];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:[b URLForResource:@"vader" withExtension:@"caf"]];
+    UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *vader = [MJSCStarsWarsCharacter starsWarsCharacterWithName:@"Anakin Skywalker"
+                                                                                 alias:@"Darth Vader"
+                                                                                   url:vaderURL
+                                                                                 sound:vaderSound
+                                                                                 image:vaderImage];
+    
+    
+    // Chewie
+    NSURL *chewieURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Chewbacca"];
+    NSBundle *chewieBound = [NSBundle mainBundle];
+    NSData *chewieSound = [NSData dataWithContentsOfURL:[b URLForResource:@"chewbacca" withExtension:@"caf"]];
+    UIImage *chewieImage = [UIImage imageNamed:@"chewbacca.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *chewie = [MJSCStarsWarsCharacter starsWarsCharacterWithAlias:@"Chewbacca"
+                                                                                   url:chewieURL
+                                                                                 sound:chewieSound
+                                                                                 image:chewieImage];
+    
+    
+    // C3po
+    NSURL *c3poURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/C3-PO"];
+    NSBundle *c3poBound = [NSBundle mainBundle];
+    NSData *c3poSound = [NSData dataWithContentsOfURL:[b URLForResource:@"c3po" withExtension:@"caf"]];
+    UIImage *c3poImage = [UIImage imageNamed:@"c3po.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *c3po = [MJSCStarsWarsCharacter starsWarsCharacterWithAlias:@"C-3po"
+                                                                                     url:c3poURL
+                                                                                   sound:c3poSound
+                                                                                   image:c3poImage];
+    
+    
+    // r2d2
+    NSURL *r2d2URL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/R2-D2"];
+    NSBundle *r2d2Bound = [NSBundle mainBundle];
+    NSData *r2d2Sound = [NSData dataWithContentsOfURL:[b URLForResource:@"r2-d2" withExtension:@"caf"]];
+    UIImage *r2d2Image = [UIImage imageNamed:@"R2-D2.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *r2d2 = [MJSCStarsWarsCharacter starsWarsCharacterWithAlias:@"R2-D2"
+                                                                                     url:r2d2URL
+                                                                                   sound:r2d2Sound
+                                                                                   image:r2d2Image];
+    
+    
+    
+    // YODA
+    NSURL *yodaURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/yoda"];
+    NSBundle *yodaBound = [NSBundle mainBundle];
+    NSData *yodaSound = [NSData dataWithContentsOfURL:[b URLForResource:@"yoda" withExtension:@"caf"]];
+    UIImage *yodaImage = [UIImage imageNamed:@"yoda.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *yoda = [MJSCStarsWarsCharacter starsWarsCharacterWithName:@"Minch"
+                                                                                alias:@"yoda"
+                                                                                   url:yodaURL
+                                                                                 sound:yodaSound
+                                                                                 image:yodaImage];
+    
+    
+    // TARKIN
+    NSURL *tarkinURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/tarkin"];
+    NSBundle *tarkinBound = [NSBundle mainBundle];
+    NSData *tarkinSound = [NSData dataWithContentsOfURL:[b URLForResource:@"tarkin" withExtension:@"caf"]];
+    UIImage *tarkinImage = [UIImage imageNamed:@"tarkin.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *tarkin = [MJSCStarsWarsCharacter starsWarsCharacterWithName:@"Grand Mof Tarkin"
+                                                                                alias:@"Tarkin"
+                                                                                  url:tarkinURL
+                                                                                sound:tarkinSound                                                                                image:tarkinImage];
+    
+    
+    
+    // PALPATINE
+    NSURL *palpatineURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/palpatine"];
+    NSBundle *palpatineBound = [NSBundle mainBundle];
+    NSData *palpatineSound = [NSData dataWithContentsOfURL:[b URLForResource:@"palpatine" withExtension:@"caf"]];
+    UIImage *palpatineImage = [UIImage imageNamed:@"palpatine.jpg"];
+    
+    
+    MJSCStarsWarsCharacter *palpatine = [MJSCStarsWarsCharacter starsWarsCharacterWithName:@"Palpatine"
+                                                                                alias:@"Darth Sidious"
+                                                                                  url:palpatineURL
+                                                                                sound:palpatineSound                                                                                image:palpatineImage];
+    
+    
+    
+    return @[vader, chewie, c3po, r2d2, yoda, tarkin, palpatine];
+    
+
+    
+}
+
+
+- (NSArray*) arrayOfControllers {
+    NSArray *models = [self arrayOfModels];
+    NSMutableArray *controllers = [NSMutableArray arrayWithCapacity:models.count];
+    
+    for (MJSCStarsWarsCharacter *model in models) {
+        // Por cada modelo creo un controlador
+        
+        MJSCCharacterViewController *charVC = [[MJSCCharacterViewController alloc] initWithModel:model];
+        
+        //Meto el controlador dentro del navigation
+        UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:charVC];
+        
+        
+        // Añado e navigation al array
+        [controllers addObject:navVC];
+    }
+    
+    return controllers;
+    
+}
+
 
 @end
