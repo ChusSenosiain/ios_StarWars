@@ -7,6 +7,7 @@
 //
 
 #import "MJSCWikiViewController.h"
+#import "MJSCStarsWarsUniverseViewController.h"
 
 @interface MJSCWikiViewController ()
 
@@ -35,14 +36,46 @@
     
     // Sincronizar modelo -> vista
     
-    self.activity.hidden = NO;
-    [self.activity startAnimating];
-    
-    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiPage]];
+    [self syncViewWithModel];
     
     
-    // Do any additional setup after loading the view from its nib.
+}
+
+
+-(void) viewWillAppear:(BOOL)animated {
     
+    [super viewWillAppear:animated];
+    
+    // Alta de notificaciones
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc addObserver:self selector:@selector(notifyThatCharacterDidChange:)
+               name:CHARACTER_DID_CHANGE_NOTIFICATION
+             object:nil];
+}
+
+
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    // Baja de notificaciones
+}
+
+
+// CHARACTER_DID_CHANGE_NOTIFICATION
+-(void) notifyThatCharacterDidChange:(NSNotification *) n {
+    
+    // Tu modelo ha cambiado
+    NSDictionary *userInfo = n.userInfo;
+    
+    self.model = [userInfo objectForKey:CHARACTER_KEY];
+    
+    // Sincronizamos modelo -> vista
+    
+    [self syncViewWithModel];
     
 }
 
@@ -74,5 +107,17 @@
     
     return YES;
   }
+
+
+
+# pragma mark - Utils
+-(void) syncViewWithModel {
+    
+    self.activity.hidden = NO;
+    [self.activity startAnimating];
+    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiPage]];
+    
+}
+
 
 @end

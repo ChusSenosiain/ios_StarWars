@@ -22,7 +22,7 @@
 }
 
 
--(NSUInteger) imperialsCount {
+-(NSUInteger) imperialCount {
     return self.imperials.count;
 }
 
@@ -47,7 +47,6 @@
         
         // Chewie
         NSURL *chewieURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/Chewbacca"];
-        NSBundle *chewieBound = [NSBundle mainBundle];
         NSData *chewieSound = [NSData dataWithContentsOfURL:[b URLForResource:@"chewbacca" withExtension:@"caf"]];
         UIImage *chewieImage = [UIImage imageNamed:@"chewbacca.jpg"];
         
@@ -60,7 +59,6 @@
         
         // C3po
         NSURL *c3poURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/C3-PO"];
-        NSBundle *c3poBound = [NSBundle mainBundle];
         NSData *c3poSound = [NSData dataWithContentsOfURL:[b URLForResource:@"c3po" withExtension:@"caf"]];
         UIImage *c3poImage = [UIImage imageNamed:@"c3po.jpg"];
         
@@ -73,7 +71,6 @@
         
         // r2d2
         NSURL *r2d2URL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/R2-D2"];
-        NSBundle *r2d2Bound = [NSBundle mainBundle];
         NSData *r2d2Sound = [NSData dataWithContentsOfURL:[b URLForResource:@"r2-d2" withExtension:@"caf"]];
         UIImage *r2d2Image = [UIImage imageNamed:@"R2-D2.jpg"];
         
@@ -87,7 +84,6 @@
         
         // YODA
         NSURL *yodaURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/yoda"];
-        NSBundle *yodaBound = [NSBundle mainBundle];
         NSData *yodaSound = [NSData dataWithContentsOfURL:[b URLForResource:@"yoda" withExtension:@"caf"]];
         UIImage *yodaImage = [UIImage imageNamed:@"yoda.jpg"];
         
@@ -101,7 +97,6 @@
         
         // TARKIN
         NSURL *tarkinURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/tarkin"];
-        NSBundle *tarkinBound = [NSBundle mainBundle];
         NSData *tarkinSound = [NSData dataWithContentsOfURL:[b URLForResource:@"tarkin" withExtension:@"caf"]];
         UIImage *tarkinImage = [UIImage imageNamed:@"tarkin.jpg"];
         
@@ -115,7 +110,6 @@
         
         // PALPATINE
         NSURL *palpatineURL = [NSURL URLWithString:@"http://es.wikipedia.org/wiki/palpatine"];
-        NSBundle *palpatineBound = [NSBundle mainBundle];
         NSData *palpatineSound = [NSData dataWithContentsOfURL:[b URLForResource:@"palpatine" withExtension:@"caf"]];
         UIImage *palpatineImage = [UIImage imageNamed:@"palpatine.jpg"];
         

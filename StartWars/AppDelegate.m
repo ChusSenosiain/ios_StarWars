@@ -41,6 +41,7 @@
     
     // Asigno delegados
     splitVC.delegate = cVC;
+    uVC.delegate = cVC;
     
     
     // Lo muestro en la pantalla

@@ -9,8 +9,10 @@
 @import UIKit;
 #import "MJSCStarsWarsCharacter.h"
 #import "CafPlayer.h"
+#import "MJSCStarsWarsUniverseViewController.h"
 
-@interface MJSCCharacterViewController : UIViewController <UISplitViewControllerDelegate>
+@interface MJSCCharacterViewController : UIViewController <UISplitViewControllerDelegate,
+MJSCStarsWarsUniverseViewControllerDelegate>
 
 
 @property (nonatomic, strong) MJSCStarsWarsCharacter *model;

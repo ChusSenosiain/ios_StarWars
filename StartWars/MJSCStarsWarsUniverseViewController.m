@@ -23,6 +23,7 @@
     
     if (self = [super initWithStyle:style]) {
         _model = model;
+        self.title = @"starsWarsUniverse";
     }
     
     return self;
@@ -93,9 +94,8 @@
     return cell;
     
     
-    
-    
 }
+
 
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -117,14 +117,26 @@
     } else {
         character = [self.model rebelAtIndex:indexPath.row];
     }
-        
-    // Crear un controlador
     
-    MJSCCharacterViewController *charVC = [[MJSCCharacterViewController alloc] initWithModel:character];
+    // Avisamos al delegado: primero verificamos que entiende el mensaje
+    if ([self.delegate respondsToSelector:@selector(starWarsUniverseViewController:didSelectCharacter:)]) {
+        [self.delegate starWarsUniverseViewController:self
+                                   didSelectCharacter:character];
+
+    }
     
-    // Pushearlo
+    // Enviamos la notificacion
+    NSDictionary *dict = @{CHARACTER_KEY: character};
+    NSNotification *n = [NSNotification notificationWithName:CHARACTER_DID_CHANGE_NOTIFICATION
+                                                      object:self
+                                                    userInfo:dict];
     
-    [self.navigationController pushViewController:charVC animated:YES];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc postNotification:n];
+    
+    
+    
 }
 
 @end

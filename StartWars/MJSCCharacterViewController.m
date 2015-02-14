@@ -78,9 +78,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // sincronizar modelo -> vista
-    self.photoView.image = self.model.photo;
+    [self syncViewWithModel];
     
-    
+   
     
     
 }
@@ -89,5 +89,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+# pragma mark - MJSCStarsWarsUniverseViewControllerDelegate
+-(void) starWarsUniverseViewController:(MJSCStarsWarsUniverseViewController *)vc didSelectCharacter:(MJSCStarsWarsCharacter *)character {
+    
+    // Ha cambiado el modelo, cambialo
+    self.model = character;
+    
+    // Sincronizamos modelo nuevo con vistas
+    [self syncViewWithModel];
+    
+   
+    
+}
+
+#pragma mark - Utils
+-(void) syncViewWithModel {
+    // Sincronizamos el modelo y se lo endosamos a la vista
+    self.photoView.image = self.model.photo;
+    self.title = self.model.alias;
+}
+
 
 @end
