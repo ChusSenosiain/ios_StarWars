@@ -62,6 +62,10 @@
     [super viewWillDisappear:animated];
     
     // Baja de notificaciones
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self];
+    
+    
 }
 
 
