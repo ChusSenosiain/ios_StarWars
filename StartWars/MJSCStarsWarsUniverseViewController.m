@@ -13,7 +13,6 @@
 
 @interface MJSCStarsWarsUniverseViewController ()
 @property (nonatomic, strong) MJSCStarWarsUniverse *model;
-
 @end
 
 @implementation MJSCStarsWarsUniverseViewController

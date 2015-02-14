@@ -44,6 +44,23 @@
 }
 
 
+# pragma mark  - UISplitViewControllerDelegate
+-(void) splitViewController:(UISplitViewController *)svc
+    willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+    
+    if (displayMode != UISplitViewControllerDisplayModeAllVisible) {
+        // Tenemos que poner un botón en mi barra
+        // de navegación que permita mostrasr el controlador
+        // primario (el de la izquierda)
+        
+        self.navigationItem.rightBarButtonItem = svc.
+        displayModeButtonItem;
+        
+    
+    }
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,11 +71,16 @@
     
     [super viewWillAppear:animated];
     
+    // Display mode preferido para  el SplitVC
+    #warning Arreglar esto
+    
     //Eliminamos comporramiento por defecto de IOS?
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // sincronizar modelo -> vista
     self.photoView.image = self.model.photo;
+    
+    
     
     
 }

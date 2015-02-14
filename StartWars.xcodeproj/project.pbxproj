@@ -36,6 +36,7 @@
 		BBAFC0F21A86103600C5745E /* MJSCWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */; };
 		BBAFC0F51A863E6100C5745E /* MJSCStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */; };
 		BBAFC0F81A86445400C5745E /* MJSCStarsWarsUniverseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */; };
+		BBAFC0FC1A8F43E500C5745E /* UIViewController+Combinator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFC0FB1A8F43E500C5745E /* UIViewController+Combinator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCStarWarsUniverse.m; sourceTree = "<group>"; };
 		BBAFC0F61A86445400C5745E /* MJSCStarsWarsUniverseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSCStarsWarsUniverseViewController.h; sourceTree = "<group>"; };
 		BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCStarsWarsUniverseViewController.m; sourceTree = "<group>"; };
+		BBAFC0FA1A8F43E500C5745E /* UIViewController+Combinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinator.h"; sourceTree = "<group>"; };
+		BBAFC0FB1A8F43E500C5745E /* UIViewController+Combinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,13 +133,13 @@
 		BBAFC0A11A852D3900C5745E /* StartWars */ = {
 			isa = PBXGroup;
 			children = (
+				BBAFC0FD1A8F4A5800C5745E /* Model */,
+				BBAFC0F91A8F437B00C5745E /* Categories */,
 				BBAFC0EB1A86030D00C5745E /* CafPlayer.m */,
 				BBAFC0EC1A86030D00C5745E /* CafPlayer.h */,
 				BBAFC0A61A852D3900C5745E /* AppDelegate.h */,
 				BBAFC0A71A852D3900C5745E /* AppDelegate.m */,
 				BBAFC0EA1A854F0000C5745E /* Resources */,
-				BBAFC0C21A8534DB00C5745E /* MJSCStarsWarsCharacter.h */,
-				BBAFC0C31A8534DB00C5745E /* MJSCStarsWarsCharacter.m */,
 				BBAFC0A91A852D3900C5745E /* Images.xcassets */,
 				BBAFC0AB1A852D3900C5745E /* LaunchScreen.xib */,
 				BBAFC0A21A852D3900C5745E /* Supporting Files */,
@@ -146,8 +149,6 @@
 				BBAFC0EE1A86103600C5745E /* MJSCWikiViewController.h */,
 				BBAFC0EF1A86103600C5745E /* MJSCWikiViewController.m */,
 				BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */,
-				BBAFC0F31A863E6100C5745E /* MJSCStarWarsUniverse.h */,
-				BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */,
 				BBAFC0F61A86445400C5745E /* MJSCStarsWarsUniverseViewController.h */,
 				BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */,
 			);
@@ -201,6 +202,26 @@
 				BBAFC0D91A854EE700C5745E /* vader.caf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		BBAFC0F91A8F437B00C5745E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFC0FA1A8F43E500C5745E /* UIViewController+Combinator.h */,
+				BBAFC0FB1A8F43E500C5745E /* UIViewController+Combinator.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		BBAFC0FD1A8F4A5800C5745E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFC0C21A8534DB00C5745E /* MJSCStarsWarsCharacter.h */,
+				BBAFC0C31A8534DB00C5745E /* MJSCStarsWarsCharacter.m */,
+				BBAFC0F31A863E6100C5745E /* MJSCStarWarsUniverse.h */,
+				BBAFC0F41A863E6100C5745E /* MJSCStarWarsUniverse.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +346,7 @@
 				BBAFC0F51A863E6100C5745E /* MJSCStarWarsUniverse.m in Sources */,
 				BBAFC0ED1A86030D00C5745E /* CafPlayer.m in Sources */,
 				BBAFC0A81A852D3900C5745E /* AppDelegate.m in Sources */,
+				BBAFC0FC1A8F43E500C5745E /* UIViewController+Combinator.m in Sources */,
 				BBAFC0A51A852D3900C5745E /* main.m in Sources */,
 				BBAFC0F11A86103600C5745E /* MJSCWikiViewController.m in Sources */,
 				BBAFC0F81A86445400C5745E /* MJSCStarsWarsUniverseViewController.m in Sources */,

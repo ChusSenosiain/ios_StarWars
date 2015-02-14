@@ -9,10 +9,8 @@
 #import "MJSCStarWarsUniverse.h"
 
 @interface MJSCStarWarsUniverse ()
-
 @property (nonatomic, strong) NSArray *imperials;
 @property (nonatomic, strong) NSArray *rebels;
-
 @end
 
 @implementation MJSCStarWarsUniverse

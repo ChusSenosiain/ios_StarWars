@@ -10,7 +10,7 @@
 #import "MJSCStarsWarsCharacter.h"
 #import "CafPlayer.h"
 
-@interface MJSCCharacterViewController : UIViewController
+@interface MJSCCharacterViewController : UIViewController <UISplitViewControllerDelegate>
 
 
 @property (nonatomic, strong) MJSCStarsWarsCharacter *model;

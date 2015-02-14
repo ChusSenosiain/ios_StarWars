@@ -13,6 +13,7 @@
 #import "MJSCWikiViewController.h"
 #import "MJSCStarWarsUniverse.h"
 #import "MJSCStarsWarsUniverseViewController.h"
+#import "UIViewController+Combinator.h"
 
 
 @implementation AppDelegate
@@ -28,16 +29,23 @@
     // Creo el modelo
     MJSCStarWarsUniverse *model = [MJSCStarWarsUniverse new];
     
-    // Creo el controlador
-    MJSCStarsWarsUniverseViewController *cVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    // Creo los controladores
+    MJSCStarsWarsUniverseViewController *uVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    
+    MJSCCharacterViewController *cVC = [[MJSCCharacterViewController alloc] initWithModel:[model imperialAtIndex:0]];
     
     
     // Creo el combinador
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cVC];
+    UISplitViewController *splitVC = [UISplitViewController new];
+    splitVC.viewControllers = @[[uVC wrappedInNavigation], [cVC wrappedInNavigation]];
+    
+    // Asigno delegados
+    splitVC.delegate = cVC;
+    
     
     // Lo muestro en la pantalla
     
-    self.window.rootViewController = nav;
+    self.window.rootViewController = splitVC;
        
     
     return YES;
