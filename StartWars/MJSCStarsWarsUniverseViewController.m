@@ -139,4 +139,14 @@
     
 }
 
+# pragma mark - MJSCStarsWarsUniverseViewControllerDelegate
+-(void) starWarsUniverseViewController:(MJSCStarsWarsUniverseViewController *)vc didSelectCharacter:(MJSCStarsWarsCharacter *)character {
+    
+    // Creo un Character VC
+    MJSCCharacterViewController *charVC = [[MJSCCharacterViewController alloc] initWithModel:character];
+    
+    // Me hago un push
+    [self.navigationController pushViewController:charVC animated:YES];
+}
+
 @end

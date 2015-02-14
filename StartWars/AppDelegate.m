@@ -29,28 +29,22 @@
     // Creo el modelo
     MJSCStarWarsUniverse *model = [MJSCStarWarsUniverse new];
     
-    // Creo los controladores
-    MJSCStarsWarsUniverseViewController *uVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    // Averiguo el tipo de pantalla
+    UIDevice *dev = [UIDevice currentDevice];
+    if ([dev userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        // Configuramos para iPad
+        [self configureForiPadWithModel:model];
+    } else {
+        // Configuramos para iPhone
+         [self configureForiPhoneWithModel:model];
+    }
     
-    MJSCCharacterViewController *cVC = [[MJSCCharacterViewController alloc] initWithModel:[model imperialAtIndex:0]];
-    
-    
-    // Creo el combinador
-    UISplitViewController *splitVC = [UISplitViewController new];
-    splitVC.viewControllers = @[[uVC wrappedInNavigation], [cVC wrappedInNavigation]];
-    
-    // Asigno delegados
-    splitVC.delegate = cVC;
-    uVC.delegate = cVC;
-    
-    
-    // Lo muestro en la pantalla
-    
-    self.window.rootViewController = splitVC;
-       
     
     return YES;
 }
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -72,6 +66,48 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+# pragma masrk - App Configuration
+-(void) configureForiPadWithModel:(MJSCStarWarsUniverse*) model {
+    
+    // Creo los controladores
+    MJSCStarsWarsUniverseViewController *uVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    
+    MJSCCharacterViewController *cVC = [[MJSCCharacterViewController alloc] initWithModel:[model imperialAtIndex:0]];
+    
+    
+    // Creo el combinador
+    UISplitViewController *splitVC = [UISplitViewController new];
+    splitVC.viewControllers = @[[uVC wrappedInNavigation], [cVC wrappedInNavigation]];
+    
+    // Asigno delegados
+    splitVC.delegate = cVC;
+    uVC.delegate = cVC;
+    
+    
+    // Lo muestro en la pantalla
+    
+    self.window.rootViewController = splitVC;
+    
+    
+}
+
+-(void) configureForiPhoneWithModel:(MJSCStarWarsUniverse*) model {
+    
+    // Creo el controlador
+    MJSCStarsWarsUniverseViewController *uVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    
+    // Creo el combinador
+    
+    UINavigationController *nv = [uVC wrappedInNavigation];
+    
+    // Asigno delegados
+    
+    // Lo muestro en pantalla
+    
+    self.window.rootViewController = nv;
+    
 }
 
 

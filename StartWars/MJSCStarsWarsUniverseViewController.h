@@ -26,7 +26,7 @@
 @end
 
 
-@interface MJSCStarsWarsUniverseViewController : UITableViewController
+@interface MJSCStarsWarsUniverseViewController : UITableViewController<MJSCStarsWarsUniverseViewControllerDelegate>
 
 @property (weak, nonatomic)id<MJSCStarsWarsUniverseViewControllerDelegate> delegate;
 
