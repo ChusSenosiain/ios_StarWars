@@ -14,15 +14,21 @@
 #import "MJSCStarWarsUniverse.h"
 #import "MJSCStarsWarsUniverseViewController.h"
 #import "UIViewController+Combinator.h"
+#import "Settings.h"
 
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Asignamos valor por defecto para último personaje
+    [self setDefaultLastCharacter];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor blueColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     
@@ -74,7 +80,8 @@
     // Creo los controladores
     MJSCStarsWarsUniverseViewController *uVC = [[MJSCStarsWarsUniverseViewController alloc] initWithModel:model style:UITableViewStylePlain];
     
-    MJSCCharacterViewController *cVC = [[MJSCCharacterViewController alloc] initWithModel:[model imperialAtIndex:0]];
+    MJSCCharacterViewController *cVC = [[MJSCCharacterViewController alloc]
+                                        initWithModel:[self lastCharacterSelectedInModel:model]];
     
     
     // Creo el combinador
@@ -103,13 +110,58 @@
     UINavigationController *nv = [uVC wrappedInNavigation];
     
     // Asigno delegados
+    uVC.delegate = uVC;
     
     // Lo muestro en pantalla
+    
     
     self.window.rootViewController = nv;
     
 }
 
+# pragma mark - User defaults
+
+-(void) setDefaultLastCharacter {
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    if (![def objectForKey:LAST_SELECTED_CHARACTER_KEY]) {
+        // Es la primera vez que se ejecuta la App
+        
+        // Metemos valores por defecto
+        
+        [def setObject:@[@0,@0] forKey:LAST_SELECTED_CHARACTER_KEY];
+        
+        // Guardamos
+        
+        [def synchronize];
+    }
+}
+
+-(MJSCStarsWarsCharacter*) lastCharacterSelectedInModel:(MJSCStarWarsUniverse*) model {
+    // Obtener las coordenadas guardadas en user defaults
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    NSArray *coords = [def objectForKey:LAST_SELECTED_CHARACTER_KEY];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger row = [[coords objectAtIndex:1] integerValue];
+    
+    
+    // segun coordenadas, crear el personaje
+    
+    MJSCStarsWarsCharacter *character;
+    
+    if (section == IMPERIAL_SECTION) {
+        character = [model imperialAtIndex:row];
+    } else {
+        character = [model rebelAtIndex:row];
+    }
+    
+    // devolverlo
+    
+    return character;
+}
 
 
 @end

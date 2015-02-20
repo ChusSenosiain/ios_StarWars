@@ -9,6 +9,7 @@
 #import "MJSCStarsWarsUniverseViewController.h"
 #import "MJSCStarWarsUniverse.h"
 #import "MJSCCharacterViewController.h"
+#import "Settings.h"
 
 
 @interface MJSCStarsWarsUniverseViewController ()
@@ -135,6 +136,15 @@
     
     [nc postNotification:n];
     
+    
+    // Guardo el personaje seleccionado
+    
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSArray *coords = @[@(indexPath.section), @(indexPath.row)];
+    
+    [def setObject:coords forKey:LAST_SELECTED_CHARACTER_KEY];
+    
+    [def synchronize];
     
     
 }

@@ -92,6 +92,7 @@
 		BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSCStarsWarsUniverseViewController.m; sourceTree = "<group>"; };
 		BBAFC0FA1A8F43E500C5745E /* UIViewController+Combinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Combinator.h"; sourceTree = "<group>"; };
 		BBAFC0FB1A8F43E500C5745E /* UIViewController+Combinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Combinator.m"; sourceTree = "<group>"; };
+		BBAFC0FE1A8F832100C5745E /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +152,7 @@
 				BBAFC0F01A86103600C5745E /* MJSCWikiViewController.xib */,
 				BBAFC0F61A86445400C5745E /* MJSCStarsWarsUniverseViewController.h */,
 				BBAFC0F71A86445400C5745E /* MJSCStarsWarsUniverseViewController.m */,
+				BBAFC0FE1A8F832100C5745E /* Settings.h */,
 			);
 			path = StartWars;
 			sourceTree = "<group>";

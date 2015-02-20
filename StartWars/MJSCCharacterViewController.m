@@ -99,8 +99,6 @@
     // Sincronizamos modelo nuevo con vistas
     [self syncViewWithModel];
     
-   
-    
 }
 
 #pragma mark - Utils
